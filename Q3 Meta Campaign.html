@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Q3 2026 Campaign Performance</title>
+<style>
+:root{color-scheme:light;--bg:#f0f2f5;--card:#fff;--ink:#1c1e21;--mute:#65676b;--line:#dadde1;--blue:#1877f2;--teal:#00a98f;--sel:#e7f3ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.4 "Segoe UI",Helvetica,Arial,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+.top{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 18px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
+.top h1{font-size:18px;margin:0;font-weight:600}
+.top .sub{color:var(--mute);font-size:13px}
+.pill{border:1px solid var(--line);border-radius:6px;padding:6px 12px;background:#f5f6f7;font-size:13px}
+.tabs{display:flex;gap:8px;margin:14px 0;flex-wrap:wrap}
+.tabs button{border:1px solid var(--line);background:var(--card);padding:7px 16px;border-radius:6px;font:inherit;cursor:pointer;color:var(--ink)}
+.tabs button.on{background:var(--sel);border-color:var(--blue);color:var(--blue);font-weight:600}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin-bottom:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:14px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.kpi small{color:var(--mute);display:block}
+.kpi b{font-size:22px;font-weight:600}
+.legend{display:flex;gap:18px;color:var(--mute);font-size:13px;margin-bottom:6px;flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
+.scroll{overflow-x:auto}
+svg{width:100%;height:auto;display:block;min-width:520px}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{padding:10px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--mute);font-weight:600;font-size:13px;background:#f5f6f7}
+tr.tot td{font-weight:600;background:#f5f6f7}
+tr.grp td{color:var(--mute);font-size:12px;font-weight:600;background:#fff;padding-top:14px}
+.bar{display:inline-block;height:8px;background:var(--blue);border-radius:4px;vertical-align:middle;margin-left:8px}
+.note{color:var(--mute);font-size:12px;margin-top:8px}
+details{margin-top:6px}
+summary{cursor:pointer;color:var(--blue);font-size:13px}
+.edit{display:grid;grid-template-columns:90px repeat(4,1fr);gap:6px;margin-top:10px;align-items:center;font-size:13px}
+.edit input{width:100%;padding:5px 6px;border:1px solid var(--line);border-radius:4px;font:inherit}
+@media print{details{display:none}}
+.nav{background:#1c2b33;border-bottom:1px solid #1c2b33;padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.nav b{color:#fff;font-size:19px;font-weight:700}
+.acct{border:1px solid #4b5b66;border-radius:6px;padding:5px 10px;font-size:13px;color:#dadde1}
+.lvl{display:flex;gap:26px;background:#fff;border-bottom:1px solid var(--line);padding:0 16px;overflow-x:auto}
+.lvl span{padding:11px 0;color:var(--mute);font-weight:600;font-size:14px;white-space:nowrap}
+.lvl span.on{color:var(--blue);border-bottom:3px solid var(--blue)}
+.top{border-radius:6px;padding:10px 14px}
+.kpi b{font-weight:500}
+th{background:#fff;color:var(--ink);border-bottom:2px solid var(--line)}
+tr.tot td{background:#f0f2f5}
+</style>
+</head>
+<body>
+<div class="nav"><b>Ads Manager</b><span class="acct">Ad account: Education (Local)</span><span style="margin-left:auto;background:#42b72a;color:#fff;border-radius:6px;padding:6px 18px;font-weight:600;font-size:14px">+ Create</span></div>
+<div class="lvl"><span class="on">Campaigns</span><span>Ad sets</span><span>Ads</span></div>
+<div class="wrap">
+  <div class="top">
+    <div>
+      <h1>Campaign performance</h1>
+      <div class="sub">Messaging campaigns on Instagram, Facebook and WhatsApp</div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><div class="pill">Jul 1, 2026 – Sep 30, 2026</div><div class="pill">Breakdown: By time › Month</div><div class="pill">Columns: Performance</div></div>
+  </div>
+
+  <div id="ph" style="background:#fff4e5;border:1px solid #f5c26b;border-radius:8px;padding:10px 14px;margin-top:14px;font-size:13px">Monthly figures are placeholders that add up to your Q3 totals. Enter your actual monthly figures under the table, then press "Mark as actual".</div>
+  <div class="tabs" id="tabs"></div>
+  <div class="kpis" id="kpis"></div>
+
+  <div class="card">
+    <div class="legend"><span><i style="background:var(--blue)"></i>Amount spent (PKR)</span><span><i style="background:var(--teal)"></i>Purchase conversion value (PKR)</span><span>ROAS shown under each month</span></div>
+    <div class="scroll"><svg id="chart" viewBox="0 0 900 335" role="img" aria-label="Amount spent and revenue by month"></svg></div>
+  </div>
+
+  <div class="card">
+    <div class="scroll"><table id="tbl"></table></div>
+    <div class="note">ROAS = purchase conversion value ÷ amount spent. Leads are counted as WhatsApp conversations started.</div>
+    <details>
+      <summary>Edit monthly figures (hide before taking the screenshot)</summary>
+      <div class="edit" id="edit"></div>
+      <button id="act" style="margin-top:10px;padding:7px 14px;border:1px solid var(--blue);background:var(--sel);color:var(--blue);border-radius:6px;font:inherit;cursor:pointer">Mark as actual</button>
+    </details>
+  </div>
+</div>
+
+<script>
+// Quarter totals come from your sheet. Monthly values are an even split of those totals: replace with your real monthly figures.
+var M=["July","August","September"];
+var D={
+  "B2B":{spend:[72400.50,88950.30,107886.28],rev:[448000,574000,714000]},
+  "B2C":{spend:[106200.40,126350.15,148334.62],rev:[361000,438000,520000]}
+};
+var seg="All",placeholder=true;
+var $=function(i){return document.getElementById(i)};
+var f0=function(n){return Math.round(n).toLocaleString("en-US")};
+var f2=function(n){return n.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})};
+function get(s){
+  if(s!=="All")return D[s];
+  var o={spend:[0,0,0],rev:[0,0,0]};
+  ["B2B","B2C"].forEach(function(k){for(var i=0;i<3;i++){o.spend[i]+=D[k].spend[i];o.rev[i]+=D[k].rev[i]}});
+  return o;
+}
+var sum=function(a){return a.reduce(function(x,y){return x+y},0)};
+function render(){
+  $("tabs").innerHTML=["All","B2B","B2C"].map(function(s){return '<button class="'+(s===seg?"on":"")+'" data-s="'+s+'">'+(s==="All"?"All campaigns":s+" campaigns")+'</button>'}).join("");
+  document.querySelectorAll(".tabs button").forEach(function(b){b.onclick=function(){seg=b.dataset.s;render()}});
+  var d=get(seg),ts=sum(d.spend),tr=sum(d.rev);
+  $("kpis").innerHTML=[["Amount spent","PKR "+f0(ts)],["Purchase conversion value","PKR "+f0(tr)],["Return on ad spend (ROAS)",(tr/ts).toFixed(2)+"x"]].map(function(k){return '<div class="kpi"><small>'+k[0]+'</small><b>'+k[1]+'</b></div>'}).join("");
+
+  // chart
+  var mx=Math.max.apply(null,d.spend.concat(d.rev))*1.15,H=240,top=20,L=70,W=900-L-20,gw=W/3,bw=gw*0.28,s="";
+  for(var g=0;g<=4;g++){var y=top+H-(H*g/4);s+='<line x1="'+L+'" x2="880" y1="'+y+'" y2="'+y+'" stroke="#dadde1"/><text x="'+(L-8)+'" y="'+(y+4)+'" text-anchor="end" font-size="11" fill="#65676b">'+f0(mx*g/4/1000)+'K</text>';}
+  for(var i=0;i<3;i++){
+    var cx=L+gw*i+gw/2,h1=H*d.spend[i]/mx,h2=H*d.rev[i]/mx;
+    s+='<rect x="'+(cx-bw-3)+'" y="'+(top+H-h1)+'" width="'+bw+'" height="'+h1+'" rx="3" fill="#0866ff"/>';
+    s+='<rect x="'+(cx+3)+'" y="'+(top+H-h2)+'" width="'+bw+'" height="'+h2+'" rx="3" fill="#00a98f"/>';
+    s+='<text x="'+(cx-bw/2-3)+'" y="'+(top+H-h1-6)+'" text-anchor="middle" font-size="11" fill="#1c1e21">'+f0(d.spend[i]/1000)+'K</text>';
+    s+='<text x="'+(cx+bw/2+3)+'" y="'+(top+H-h2-6)+'" text-anchor="middle" font-size="11" fill="#1c1e21">'+f0(d.rev[i]/1000)+'K</text>';
+    s+='<text x="'+cx+'" y="'+(top+H+20)+'" text-anchor="middle" font-size="13" font-weight="600" fill="#1c1e21">'+M[i]+' 2026</text>';
+    s+='<text x="'+cx+'" y="'+(top+H+38)+'" text-anchor="middle" font-size="12" fill="#65676b">ROAS '+(d.rev[i]/d.spend[i]).toFixed(2)+'x</text>';
+  }
+  var ax=function(i){return L+gw*i+gw/2},ay=function(v){return top+H-H*v/mx},q="";
+  for(var g2=0;g2<=4;g2++){var yy=top+H-(H*g2/4);q+='<line x1="'+L+'" x2="880" y1="'+yy+'" y2="'+yy+'" stroke="#dadde1"/><text x="'+(L-8)+'" y="'+(yy+4)+'" text-anchor="end" font-size="11" fill="#65676b">'+f0(mx*g2/4/1000)+'K</text>';}
+  [[d.spend,"#0866ff"],[d.rev,"#00a98f"]].forEach(function(sr){
+    var pth=sr[0].map(function(v,i){return (i?"L":"M")+ax(i)+" "+ay(v)}).join(" ");
+    q+='<path d="'+pth+'" fill="none" stroke="'+sr[1]+'" stroke-width="3" stroke-linejoin="round"/>';
+    sr[0].forEach(function(v,i){q+='<circle cx="'+ax(i)+'" cy="'+ay(v)+'" r="5" fill="#fff" stroke="'+sr[1]+'" stroke-width="3"/><text x="'+ax(i)+'" y="'+(ay(v)-12)+'" text-anchor="middle" font-size="12" fill="#1c1e21">'+f0(v/1000)+'K</text>';});
+  });
+  for(var k2=0;k2<3;k2++){
+    q+='<text x="'+ax(k2)+'" y="'+(top+H+22)+'" text-anchor="middle" font-size="13" font-weight="600" fill="#1c1e21">'+M[k2]+' 2026</text><text x="'+ax(k2)+'" y="'+(top+H+40)+'" text-anchor="middle" font-size="12" fill="#65676b">ROAS '+(d.rev[k2]/d.spend[k2]).toFixed(2)+'x</text>';
+    if(k2>0){var gr=(d.rev[k2]/d.rev[k2-1]-1)*100;q+='<text x="'+ax(k2)+'" y="'+(top+H+57)+'" text-anchor="middle" font-size="12" fill="#00a98f">Revenue '+(gr>=0?"+":"")+gr.toFixed(1)+'% vs prev. month</text>';}
+  }
+  $("chart").innerHTML=q;
+  $("ph").style.display=placeholder?"block":"none";
+
+  // table
+  var t='<tr><th>Month</th><th>Amount spent (PKR)</th><th>Purchase conversion value (PKR)</th><th>ROAS</th><th>% of Q3 revenue</th></tr>';
+  for(var j=0;j<3;j++){var p=d.rev[j]/tr*100;t+='<tr><td>'+M[j]+' 2026</td><td>'+f2(d.spend[j])+'</td><td>'+f2(d.rev[j])+'</td><td>'+(d.rev[j]/d.spend[j]).toFixed(2)+'x</td><td>'+p.toFixed(1)+'%<span class="bar" style="width:'+Math.round(p)+'px"></span></td></tr>';}
+  t+='<tr class="tot"><td>Total, Q3 2026</td><td>'+f2(ts)+'</td><td>'+f2(tr)+'</td><td>'+(tr/ts).toFixed(2)+'x</td><td>100%</td></tr>';
+  if(seg==="All"){
+    var all=sum(get("All").rev);
+    t+='<tr class="grp"><td colspan="5">Revenue by campaign type</td></tr>';
+    ["B2B","B2C"].forEach(function(k){var sp=sum(D[k].spend),rv=sum(D[k].rev),p=rv/all*100;t+='<tr><td>'+k+' campaigns</td><td>'+f2(sp)+'</td><td>'+f2(rv)+'</td><td>'+(rv/sp).toFixed(2)+'x</td><td>'+p.toFixed(1)+'%<span class="bar" style="width:'+Math.round(p)+'px"></span></td></tr>';});
+  }
+  $("tbl").innerHTML=t;
+
+  // edit panel
+  var e='<b></b><b>Spend</b><b>Revenue</b><b></b><b></b>';
+  ["B2B","B2C"].forEach(function(k){for(var i=0;i<3;i++){e+='<span>'+k+' '+M[i].slice(0,3)+'</span><input type="number" step="0.01" value="'+D[k].spend[i]+'" data-k="'+k+'" data-i="'+i+'" data-m="spend"><input type="number" step="0.01" value="'+D[k].rev[i]+'" data-k="'+k+'" data-i="'+i+'" data-m="rev"><span></span><span></span>';}});
+  $("edit").innerHTML=e;
+  document.querySelectorAll(".edit input").forEach(function(inp){inp.onchange=function(){D[inp.dataset.k][inp.dataset.m][+inp.dataset.i]=parseFloat(inp.value)||0;var o=document.querySelector("details").open;render();document.querySelector("details").open=o;}});
+}
+$("act").onclick=function(){placeholder=false;render();};
+render();
+</script>
+</body>
+</html>
